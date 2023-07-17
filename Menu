@@ -1,0 +1,73 @@
+#!/bin/bash
+#    .--.
+#   |o_o |
+#   |:_/ |
+#  //   \ \
+# (|     | )
+#/'\_   _/`\
+#\___)=(___/
+#
+#+-----------------------------+
+#| Menu of AGLAE               |
+#| scripts bash                |
+#| @author dbeux@infomaniak.ch |
+#| @since  dim 09 jui 2023     |
+#+-----------------------------+
+# Appel de la librairie des collections
+. CollectionLibrary
+
+function insertExpense() {
+  echo "Todo insertExpense"
+}
+
+function insertCashInflow() {
+  echo "Todo insertCashInflow"
+}
+
+function displayBilan() {
+  echo "Todo displayBilan"
+}
+
+function exportReporting() {
+  echo "Todo exportReporting"
+}
+
+addIndexValue "Entrer_une_dépense" "insertExpense"
+addIndexValue "Entrer_une_entrée_d'argent" "insertCashInflow"
+addIndexValue "Afficher_bilan_des_dépenses_et_des_gains" "displayBilan"
+addIndexValue "Exporter_document" "exportReporting"
+
+item=""
+while [ "${item}" == "" ]; do
+  cat title.txt
+  displayIndexes
+  echo -en "Choisissez une entrée [1 .. ${#indexes[@]}] ou [Q]uitter : " 
+  read item
+  case ${item} in
+    1)
+      getValueFromIndex "Entrer_une_dépense"
+      insertExpense
+      item=''
+      ;;
+    2)
+      getValueFromIndex "Entrer_une_entrée_d'argent"
+      insertCashInflow
+      item=''
+      ;;
+    3)
+      getValueFromIndex "Afficher_bilan_des_dépenses_et_des_gains"
+      displayBilan
+      item=''
+      ;;
+    4)
+      getValueFromIndex "Exporter_document"
+      exportReporting
+      item=''
+      ;;
+    *)
+      if [ "$item" != "Q" ] && [ "$item" != "q" ]; then
+        echo "No value found"
+        item=''
+      fi
+  esac
+done

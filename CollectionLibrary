@@ -1,0 +1,82 @@
+#!/bin/bash
+#    .--.
+#   |o_o |
+#   |:_/ |
+#  //   \ \
+# (|     | )
+#/'\_   _/`\
+#\___)=(___/
+#
+#+-----------------------------+
+#| Library of collections for  |
+#| scripts bash                |
+#| @author dbeux@infomaniak.ch |
+#| @since  dim 09 jui 2023     |
+#+-----------------------------+
+#
+# Collection
+#
+indexes=""
+values=""
+positions=""
+#
+# Return the next position avalable in the collection.
+function getNextPosition() {
+  nextPosition=${#positions[@]}
+  echo ${nextPosition}
+}
+#
+# Add value from en index to the collection.
+function addIndexValue() {
+  index="$1"
+  value="$2"
+  position=$(getNextPosition);
+  indexes[${position}]=${index}
+  values[${position}]=${value}
+  positions[${position}]=${position}
+}
+#
+# Get the value at the index in the collection.
+function getValueFromIndex() {
+  index="$1"
+  cpt=0
+  for i in "${indexes[@]}"; do
+     if [ "${indexes[${cpt}]}" == "${index}" ]; then
+        echo "${values[${cpt}]}"
+     fi
+     ((cpt++))
+  done
+}
+#
+# Get the index values from the collection.
+function getlistOfCollection() {
+  cpt=0
+  for i in "${indexes[@]}"; do
+     echo -en ${positions[$cpt]}" "
+     echo -en ${indexes[$cpt]}" "
+     echo -en ${values[$cpt]}"\n"
+     ((cpt++))
+  done
+}
+#
+# Display the index collection in the format :
+# 1. first index
+# 2. second index
+# etc.
+function displayIndexes() {
+  cpt=0
+  for i in "${indexes[@]}"; do
+      echo "$cpt. ${indexes[${cpt}]}"
+     ((cpt++))
+  done
+}
+#
+# Search value in the indexes array.
+# Return 1 if found ans 0 if not.
+function existIn() {
+  valueToSearchIn="$1"
+  if [[ "${indexes[*]}" =~ "${valueToSearchIn}" ]]; then
+    return 0
+  fi
+  return 1
+}
