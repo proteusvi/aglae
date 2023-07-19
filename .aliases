@@ -1,0 +1,89 @@
+#!/bin bash
+#    .--.
+#   |o_o |
+#   |:_/ |
+#  //   \ \
+# (|     | )
+#/'\_   _/`\
+#\___)=(___/
+#
+#+----------------------------------+
+#| Script de chargement des aliases |
+#| pour les outils de développement.|
+#| @author : dbeux@infomaniak.ch    |
+#+----------------------------------+
+#
+# Variables et constantes
+TYPE_ERROR=('INFO' 'WARNING' 'ERROR')
+project=''
+scripts_path=''
+go=true
+
+#+-------------------------+
+#| Fonction printMessage.
+#| paramètres :
+#|  - type : 0|1|2
+#|    0. INFO.
+#|    1. WARNING.
+#|    2. ERROR.
+#|  - message : message.
+#| Retourne <type INFO|WARNING|ERROR> <message>
+#+-------------------------+
+function printMessage() {
+  type="$1"
+  message="$2"
+  echo "${TYPE_ERROR[${type}]} ${message}"
+}
+
+#+-----------------------------+
+#| Retourne 0 si le répertoire |
+#| est valide et 1 sinon.      |
+#+-----------------------------+
+function isValidDirectory() {
+  if [ -d ./docker ]; then
+    return 0
+  fi
+  return 1
+}
+
+#+----------------------------+
+#| Chargement de la librairie |
+#| ./.env                     |
+#+----------------------------+
+if isValidDirectory; then
+  . ./docker/.env
+  project=${PROJECT_NAME}
+  printMessage "0" "Pour utiliser les alias, se placer dans le répertoire docker."
+else
+  printMessage "1" "Vous n'êtes pas dans le répertoire du projet."
+  printMessage "1" "Impossible de trouver le fichier .env."
+  go=false
+fi
+
+#+-----------------------------+
+#| Raccourci pour se connecter |
+#| à un conteneur.             |
+#| Paramètres :                |
+#|  -conteneur php, node,      |
+#|             mariadb ou      |
+#|             apache.         |
+#+-----------------------------+
+function connect() {
+  conteneur="$1"
+  if [ "${conteneur}" == "php" ] ||
+     [ "${conteneur}" == "node" ] ||
+     [ "${conteneur}" == "postgres" ]; then
+    docker exec -it ${project}_${conteneur} /bin/bash
+  else 
+    printMessage "1" "Le paramètre doit être : php|node|postgres"
+  fi
+}
+
+#+------------------------+
+#| Chargement des aliases |
+#+------------------------+
+if ${go}; then
+  alias start='docker compose up -d'
+  alias stop='docker compose down'
+  alias restart='stop; start'
+fi
