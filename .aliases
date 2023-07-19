@@ -1,0 +1,2 @@
+alias start='docker compose up -d'
+alias stop='docker compose down'
