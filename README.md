@@ -1,5 +1,5 @@
 # Développement
-## Avant de commancer.
+## Avant de commencer.
 ## Comment lancer l'application.
 1. Sourcer les .aliases puis toutes les commande docker à lancer dans le répretoire docker : 
 ```bash
