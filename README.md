@@ -10,7 +10,13 @@
 ```bash
  $ docker compose up -d
 ```
-3. Dans le browser de votre choix, taper l'URL http://aglae.local.ch:8000/ \
+3. déployer symfony dans votre conteneur php :
+```bash
+$ start
+$ connect php
+wodby@php.container:/var/www/html $ composer install
+```
+4. Dans le browser de votre choix, taper l'URL http://aglae.local.ch:8000/ \
 Pour que cela fonctionne, il faut ajouter la ligne :
 ```bash
 localhost   aglae.local.ch
