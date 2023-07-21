@@ -19,6 +19,6 @@ wodby@php.container:/var/www/html $ composer install
 4. Dans le browser de votre choix, taper l'URL http://aglae.local.ch:8000/ \
 Pour que cela fonctionne, il faut ajouter la ligne :
 ```bash
-localhost   aglae.local.ch
+127.0.0.1   aglae.local.ch
 ```
 - dans le fichier /etc/hosts en tant que root.
