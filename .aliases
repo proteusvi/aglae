@@ -53,7 +53,11 @@ function isValidDirectory() {
 if isValidDirectory; then
   . ./docker/.env
   project=${PROJECT_NAME}
+  printMessage "0" "Changer le owner à wodby pour symfony soit la commande :"
+  printMessage "0" "'$ chown -R 1000:1000 ./symfony'" 
   printMessage "0" "Pour utiliser les alias, se placer dans le répertoire docker."
+  printMessage "0" "Remettre les droits avant de commiter les changements soit :"
+  printMessage "0" "'$ chown -R $UID:$UID ./symfony'"
 else
   printMessage "1" "Vous n'êtes pas dans le répertoire du projet."
   printMessage "1" "Impossible de trouver le fichier .env."
