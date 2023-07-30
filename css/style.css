@@ -1,0 +1,13 @@
+h1 {
+    color: grey;
+}
+
+span, .word-title-description {
+    color: red;
+}
+
+.img-logo {
+    position:absolute;
+    margin-top: -20px;
+    margin-left: -10px;
+}
