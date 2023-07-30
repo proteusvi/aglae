@@ -30,14 +30,22 @@
             <form action="entrees.html">
                 <fieldset>
                     <legend>Écriture</legend>
-                    <label for="date">Date:</label>
-                    <input type="date" id="date" name="entree-date" required>
-                    <label for="libelle">Libellé:</label>
-                    <input type="text" id="libelle" required>
-                    <label for="amount">Montant:</label>
-                    <input type="text" id="amount" placeholder="00.00" required>CHF
-                    <input type="submit" value="Ajouter">
-                    <input type="reset" value="Annuler">
+                    <div>
+                        <label for="date">Date:</label>
+                        <input type="date" id="date" name="entree-date" required>
+                        <label for="libelle">Libellé:</label>
+                        <input type="text" id="libelle" required>
+                        <label for="amount">Montant:</label>
+                        <input type="text" id="amount" placeholder="00.00" required>CHF
+                    </div>
+                    <div>
+                        <label for="file-input">Insérer un fichier</label>
+                        <input type="file" id="file-input">
+                    </div>
+                    <div>
+                        <input type="submit" value="Ajouter">
+                        <input type="reset" value="Annuler">
+                    </div>
                 </fieldset>
             </form>
     </body>
