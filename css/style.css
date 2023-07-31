@@ -25,6 +25,10 @@ body {
     text-decoration: underline;
 }
 
+.header-aglae .img-logo {
+    width: 25%;
+}
+
 .header-aglae .img-bg {
     width: 100%;
     height: auto;
