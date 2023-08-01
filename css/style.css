@@ -1,32 +1,43 @@
+html body {
+    font-size: 16px;
+}
+
 body {
     margin: 0;
     line-height: 1.4;
+    letter-spacing: 0.2;
     font-family: "Source Sans Pro", sans-serif;
 }
 
 .header-aglae {
-    background-color: grey;
+    /* background-color: grey; */
     padding: 20px;
-    color: #ffffff;
+    height: auto;
+    color: #00000;
 }
 
-.header-menu-aglae {
-    margin: 20px 0;
-    text-align: center;
+.header-title {
+    position: absolute;
+    top: 0;
+    left: 20%;
+    right: 0;
+    bottom: 0;
+    font-style: italic;
 }
 
-.header-menu-aglae a {
-    padding: 0 10px;
-    color: inherit;
-    text-decoration: none;
-}
-
-.header-menu-aglae a:hover {
-    text-decoration: underline;
+.header-title-description {
+    position: relative;
+    left: 100px;
+    right: 0;
+    bottom: 10px;
+    font-weight: lighter;
+    text-transform: uppercase;
 }
 
 .header-aglae .img-logo {
+    position: absolute;
     width: 25%;
+    margin: -20px;
 }
 
 .header-aglae .img-bg {
@@ -34,14 +45,26 @@ body {
     height: auto;
 }
 
-.header-title {
-    margin-top: 0;
-    font-style: italic;
+.header-menu-aglae {
+    position: relative;
+    top: 20px;
+    text-align: right;
 }
 
-.word-title-description {
-    font-weight: lighter;
-    text-transform: uppercase;
+.header-menu-aglae a {
+    padding: 0 10px;
+    color: #ffffff;
+    text-decoration: none;
+    background-color: darkslategray;
+}
+
+.header-menu-aglae a:hover {
+    background-color: lightslategray;
+    color:inherit;
+}
+
+.menu-selected {
+    color:inherit;
 }
 
 .main-aglae {
