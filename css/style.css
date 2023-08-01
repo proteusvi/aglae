@@ -47,7 +47,7 @@ body {
 
 .header-menu-aglae {
     position: relative;
-    top: 20px;
+    top: 21px;
     text-align: right;
 }
 
@@ -55,16 +55,16 @@ body {
     padding: 0 10px;
     color: #ffffff;
     text-decoration: none;
-    background-color: darkslategray;
+    background-color: orangered;
 }
 
 .header-menu-aglae a:hover {
-    background-color: lightslategray;
+    background-color: orange;
     color:inherit;
 }
 
 .menu-selected {
-    color:inherit;
+    color:#ffffff;
 }
 
 .main-aglae {
