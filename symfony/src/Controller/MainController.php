@@ -13,6 +13,8 @@ use Symfony\Component\Routing\Annotation\Route;
 class MainController extends AbstractController{
     #[Route('/', 'accueil')]
     public function index(): Response {
-        return new Response('In progress ...');
+        return $this->render('main/index.twig', [
+            'title' => 'Mon titre',
+        ]);
     }
 }
