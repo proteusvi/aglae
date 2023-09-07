@@ -13,8 +13,15 @@ use Symfony\Component\Routing\Annotation\Route;
 class MainController extends AbstractController{
     #[Route('/', 'accueil')]
     public function index(): Response {
+        $imageDir = $this->getParameter('kernel.project_dir') . '/public/images/';
         return $this->render('main/index.twig', [
             'title' => 'Mon titre',
         ]);
     }
+
+/*
+    private getMenu(){
+        
+    }
+*/
 }
