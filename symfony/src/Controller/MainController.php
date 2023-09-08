@@ -5,6 +5,8 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Asset\Package;
+use Symfony\Component\Asset\VersionStrategy\EmptyVersionStrategy;
 
 /**
  * Main controller
@@ -13,7 +15,6 @@ use Symfony\Component\Routing\Annotation\Route;
 class MainController extends AbstractController{
     #[Route('/', 'accueil')]
     public function index(): Response {
-        $imageDir = $this->getParameter('kernel.project_dir') . '/public/images/';
         return $this->render('main/index.twig', [
             'title' => 'Mon titre',
         ]);
