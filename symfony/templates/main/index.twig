@@ -1,31 +1,32 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} Aglae - page d'accueil{% endblock %}
+{% block title %}
+	Aglae - page d'accueil
+{% endblock %}
 
 {% block body_header_top %}
-            <div classe="header-title-general">
-                <h1 class="header-title">AGLAE</h1>
-                <span class="header-title-description">
-                    Association des étudiants de grec, latin et 
-                    histoire ancienne de l'université de Genève
-                </span>
-                {{ dump([
-                    asset('build/images/Logo_Aglae_364.png'),
-                    asset('build/images/gestion_financiere.png'),
+	<div classe="header-title-general">
+		<h1 class="header-title">AGLAE</h1>
+		<span class="header-title-description">
+			Association des étudiants de grec, latin et 
+			                    histoire ancienne de l'université de Genève
+		</span>
+		{{ dump([
+                    asset('Logo_Aglae_364.png'),
+                    asset('gestion_financiere.png'),
                 ]) }}
-                <img class="img-logo" src="{{ asset('build/images/Logo_Aglae_364.png') }}" alt="Logo Aglae">
-                <img class="img-bg" src="{{ asset('build/images/gestion_financiere.png') }}" width="1904" height="250" alt="Images argent Suisse flouté">
-           </div>
+		<img class="img-logo" src="{{ asset('/Logo_Aglae_364.png') }}" alt="Logo Aglae">
+		<img class="img-bg" src="{{ asset('gestion_financiere.png') }}" width="1904" height="250" alt="Images argent Suisse flouté">
+
+	</div>
 {% endblock %}
 
-{% block body_menu %}
-{% endblock %}
+{% block body_menu %}{% endblock %}
 
-{% block body_header_botom %}
-{% endblock %}
+{% block body_header_botom %}{% endblock %}
 
 {% block body_content %}
-<h1>{{title}}</h1>
+	<h1>{{title}}</h1>
 
-In progress ...
+	In progress ...
 {% endblock %}
