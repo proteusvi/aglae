@@ -83,6 +83,23 @@ function connect() {
   fi
 }
 
+#+-----------------------------+
+#| Change le owner sur le ré-  |
+#| pertoire symfony et toute   | 
+#| sa descendance pour wodby   |
+#| ou ${USER}.                 |
+#+-----------------------------+
+function setAccessTo() {
+  owner="$1"
+  if [ ! -d ../symfony ]; then
+     printMessage "1" "Vous devez être dans le répertoire docker pour lancer la commande."
+  elif [ "$1" == "" ]; then
+     printMessage "1" "Vous devez passer le owner en paramêtre."
+  else
+     sudo chown -R ${owner} ../symfony
+  fi
+}
+
 #+------------------------+
 #| Chargement des aliases |
 #+------------------------+
