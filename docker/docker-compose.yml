@@ -68,9 +68,9 @@ services:
       NGINX_ERROR_LOG_LEVEL: debug
       NGINX_BACKEND_HOST: php
       NGINX_VHOST_PRESET: php
-      NGINX_SERVER_ROOT: /var/www/html/public
+      NGINX_SERVER_ROOT: "/var/www/html/public"
     volumes:
-    - ./:/var/www/html:cached
+    - ../symfony:/var/www/html:cached
 ## Alternative for macOS users: Mutagen https://wodby.com/docs/stacks/php/local#docker-for-mac
 #    - backend:/var/www/html
     labels:

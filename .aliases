@@ -76,7 +76,8 @@ function connect() {
   conteneur="$1"
   if [ "${conteneur}" == "php" ] ||
      [ "${conteneur}" == "node" ] ||
-     [ "${conteneur}" == "postgres" ]; then
+     [ "${conteneur}" == "postgres" ] ||
+     [ "${conteneur}" == "nginx" ]; then
     docker exec -it ${project}_${conteneur} /bin/bash
   else 
     printMessage "1" "Le paramètre doit être : php|node|postgres"
