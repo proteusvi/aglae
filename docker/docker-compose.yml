@@ -29,7 +29,7 @@ services:
   #  - /path/to/postgres/data/on/host:/var/lib/postgresql/data # I want to manage volumes manually.
 
   php:
-    image: wodby/php:$PHP_TAG
+    build: dockerfiles/php
     container_name: "${PROJECT_NAME}_php"
     environment:
       SSMTP_MAILHUB: mailhog:1025
