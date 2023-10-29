@@ -5,15 +5,29 @@
 {% endblock %}
 
 {% block body_header_top %}
-	<div classe="header-title-general">
-		<h1 class="header-title">AGLAE</h1>
-		<span class="header-title-description">
-			Association des étudiants de grec, latin et 
-			                    histoire ancienne de l'université de Genève
-		</span>
-		<img class="img-logo" src="{{ asset('images/Logo_Aglae_364.png') }}" alt="Logo Aglae">
-		<img class="img-bg" src="{{ asset('images/gestion_financiere.png') }}" width="1904" height="250" alt="Images argent Suisse flouté">
-	</div>
+        <header class="header-aglae">
+            <div classe="header-title-general">
+                <h1 class="header-title">AGLAE</h1>
+                <span class="header-title-description">
+                    Association des étudiants de grec, latin et 
+                    histoire ancienne de l'université de Genève
+                </span>
+            </div>
+            <nav class="header-menu-aglae">
+                <a href="sorties.html" title="Dépenses">Dépenses</a>
+                <a href="entrees.html" title="Entrées">Entrées</a>
+                <a href="publications.html" title="Publications">Publications</a>
+                <a href="exportations.html" title="Exportations">Exportations</a>
+            </nav>
+            <img class="img-logo" src="{{asset('images/Logo_Aglae_364.png')}}" alt="Logo Aglae">
+            <img class="img-bg" src="{{asset('images/gestion_financiere.png')}}" width="1904" height="250" alt="Images argent Suisse flouté">
+        </header>
+        <article class="main-aglae">
+            <h1>Gestion des comptes et rapports de l'association.</h1>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores laborum enim aliquam delectus ipsa fuga pariatur, debitis nemo architecto quas in quasi accusamus itaque aspernatur, consequuntur voluptatum amet dignissimos tenetur.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad commodi suscipit eligendi nobis aliquid itaque labore animi eos repudiandae, impedit corrupti fuga consequuntur, explicabo amet incidunt. Nihil exercitationem nisi perspiciatis!
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dolorum dolor non esse laborum, porro molestiae inventore in, ab architecto cumque beatae iste eaque? Obcaecati in ipsa animi culpa odit!
+        </article>
 {% endblock %}
 
 {% block body_menu %}{% endblock %}
