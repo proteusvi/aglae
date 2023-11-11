@@ -31,6 +31,8 @@ services:
   php:
     build: dockerfiles/php
     container_name: "${PROJECT_NAME}_php"
+    depends_on:
+    - postgres
     environment:
       SSMTP_MAILHUB: mailhog:1025
 #      SSMTP_MAILHUB: opensmtpd:25
